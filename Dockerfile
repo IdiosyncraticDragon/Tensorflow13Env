@@ -5,7 +5,7 @@ RUN apt update || true \
 
 
 #COPY ./Miniconda3-4.5.12-Linux-x86_64.sh /anaconda.sh
-RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86.sh /anaconda.sh
+RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86.sh && mv Miniconda3-latest-Linux-x86.sh /anaconda.sh
 RUN /bin/bash /anaconda.sh -b -p /opt/conda \
     && rm /anaconda.sh \
     && /opt/conda/bin/conda install -y \
